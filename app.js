@@ -1,4 +1,5 @@
 var express = require('express')
+var config = require('./config.js').config
 global.app = express();
 global.datos = [];
 
@@ -8,6 +9,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 
 require('./rutas')
+
+
  global.calculo = function(tipo, val1, val2){
      if (tipo == 'suma') {
          return val1+val2
@@ -31,6 +34,6 @@ require('./rutas')
 
 app.use('/',express.static(__dirname + '/Pagina'))//Expone el frontend
 
-app.listen(3000, function(){
-    console.log ('servidor funcionando por puerto 3000')
+app.listen(config.puerto, function(){
+    console.log ('servidor funcionando por puerto: '+ config.puerto)
 })

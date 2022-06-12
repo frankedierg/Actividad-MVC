@@ -70,7 +70,7 @@ sesionesController.registro = function(request,response){
    }
    sesionesModel.registro(post, function(resultado){
     //response.json(resultado)
-    response.json('Bienvenido '+ name + ' '+ lname)
+    response.json({mensaje:'Bienvenido '+ name + ' '+ lname})
    })
    
   
