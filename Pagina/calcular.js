@@ -12,7 +12,7 @@ var Peticion = function(tipo,url,payload,callback){
 
     xhr.addEventListener("readystatechange", function(){
         if(this.readyState===4){
-        return callback(JSON.parse( this.responseText))       
+        return callback(JSON.parse(this.responseText))       
         }
     })
 }
